@@ -5,7 +5,7 @@
   python scripts/gen_seed_qa.py \
     --corpus data/news_corpus/en/corpus.json \
     --output data/news_synthesis/seeds.jsonl \
-    --model mog-1 --workers 20 --limit 2000
+    --model gpt-5.4 --workers 20 --limit 2000
 """
 import argparse
 import json
@@ -161,7 +161,7 @@ def main():
     parser.add_argument("--corpus", default="data/news_corpus/en/corpus.json")
     parser.add_argument("--output", default="data/news_synthesis/seeds.jsonl")
     parser.add_argument("--prompts", default="scripts/synthesis_prompts.yaml")
-    parser.add_argument("--model", default="gpt-oss-120b")
+    parser.add_argument("--model", default="gpt-5.4")
     parser.add_argument("--workers", type=int, default=20)
     parser.add_argument("--limit", type=int, default=2000, help="Max chunks to sample")
     parser.add_argument("--gen-qa-num", type=int, default=3, help="Max QA per chunk")
